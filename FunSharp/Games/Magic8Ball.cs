@@ -11,6 +11,7 @@ namespace FunSharp.Games
         /// </summary>
         public static new Magic8Ball Instance { get; } = new Magic8Ball();
 
+        #region Replies
         private static List<string> Negatives = new List<string> {
             "Very doubtful", 
             "Outlook not so good",
@@ -39,11 +40,10 @@ namespace FunSharp.Games
             "It is decidedly so",
             "It is certain"
         };
+        #endregion
 
-        public Magic8Ball() : base()
-        {
-
-        }
+        public Magic8Ball() : base() { }
+        public Magic8Ball(int seed) : base(seed) { }
 
         public string RandomNegative()
         {

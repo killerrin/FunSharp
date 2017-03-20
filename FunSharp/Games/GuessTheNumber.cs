@@ -15,14 +15,11 @@ namespace FunSharp.Games
         public int LowerRange { get; protected set; }
         public int UpperRange { get; protected set; }
 
-        public GuessTheNumber() : base()
-        {
-            NewGame(1, 10);
-        }
-        public GuessTheNumber(int lower, int upper) : base()
-        {
-            NewGame(lower, upper);
-        }
+        public GuessTheNumber() : base() { NewGame(1, 10); }
+        public GuessTheNumber(int seed) : base(seed) { NewGame(1, 10); }
+
+        public GuessTheNumber(int lower, int upper) : base() { NewGame(lower, upper); }
+        public GuessTheNumber(int seed, int lower, int upper) : base(seed) { NewGame(lower, upper); }
 
         public void NewGame()
         {
