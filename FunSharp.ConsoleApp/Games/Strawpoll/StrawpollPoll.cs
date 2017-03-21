@@ -11,7 +11,7 @@ namespace FunSharp.Games.Strawpoll
         public List<string> options { get; set; }
 
         
-        public List<int> votes { get; set; }
+        public List<int> votes { get; set; } 
         public string dupcheck { get; set; }
         public bool captcha { get; set; }
 
