@@ -2,7 +2,5 @@
 
 namespace FunSharp.NSFW
 {
-    public class Class1
-    {
-    }
+    
 }

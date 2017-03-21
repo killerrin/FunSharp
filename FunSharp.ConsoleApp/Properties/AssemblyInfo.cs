@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("FunSharp.Console")]
+[assembly: AssemblyTitle("FunSharp.ConsoleApp")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("FunSharp.Console")]
+[assembly: AssemblyProduct("FunSharp.ConsoleApp")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("26c0c5fa-9cff-4835-819b-eb1f076f52a0")]
+[assembly: Guid("95531f95-cd04-45e1-9589-887465c5772e")]
 
 // Version information for an assembly consists of the following four values:
 //
