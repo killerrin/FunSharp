@@ -28,9 +28,7 @@ namespace FunSharp.Core.Games.Strawpoll
             votes = new List<int>();
         }
 
-        public string GetPollUrl()
-        {
-            return "http://www.strawpoll.me/" + id;
-        }
+        public string GetPollUrl() => "http://www.strawpoll.me/" + id;
+        public Uri GetPollUri() => new Uri(GetPollUrl());
     }
 }

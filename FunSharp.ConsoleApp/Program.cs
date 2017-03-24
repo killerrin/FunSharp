@@ -1,4 +1,5 @@
-﻿using FunSharp.Core.Games.Strawpoll;
+﻿using FunSharp.Core.Games.Randomized;
+using FunSharp.Core.Games.Strawpoll;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -14,8 +15,24 @@ namespace FunSharp.ConsoleApp
         {
             //StrawpollGetPoll();
             //StrawpollPostPoll();
+            //Test8Ball();
+
+
 
             Console.ReadLine();
+        }
+
+        private static void Test8Ball()
+        {
+            var magic8Ball = Magic8Ball.Instance;
+            while (true)
+            {
+                Console.WriteLine(magic8Ball.RandomAll());
+
+                var result = Console.ReadLine();
+                if (result == "exit")
+                    break;
+            }
         }
 
         private static async void StrawpollGetPoll()
