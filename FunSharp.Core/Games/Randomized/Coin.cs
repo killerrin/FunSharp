@@ -45,7 +45,7 @@ namespace FunSharp.Core.Games.Randomized
             return flips;
         }
 
-        public CoinResult FlipCoinWihSide()
+        public CoinResult FlipCoinWithSide()
         {
             var result = Random.Next(3);
             if (result == 0)
