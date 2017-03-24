@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace FunSharp.Games.Randomized
+namespace FunSharp.Core.Games.Randomized
 {
     public class Magic8Ball : Randomizer
     {

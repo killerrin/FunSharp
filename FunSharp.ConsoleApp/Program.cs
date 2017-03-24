@@ -1,4 +1,4 @@
-﻿using FunSharp.Games.Strawpoll;
+﻿using FunSharp.Core.Games.Strawpoll;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;

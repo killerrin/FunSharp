@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace FunSharp.Games.Strawpoll
+namespace FunSharp.Core.Games.Strawpoll
 {
     public class StrawpollPoll
     {

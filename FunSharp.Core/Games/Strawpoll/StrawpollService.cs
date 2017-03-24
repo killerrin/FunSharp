@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
-namespace FunSharp.Games.Strawpoll
+namespace FunSharp.Core.Games.Strawpoll
 {
     public class StrawpollService
     {

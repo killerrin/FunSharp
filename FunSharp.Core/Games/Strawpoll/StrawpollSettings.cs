@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace FunSharp.Games.Strawpoll
+namespace FunSharp.Core.Games.Strawpoll
 {
     public class StrawpollSettings
     {
