@@ -48,7 +48,7 @@ namespace FunSharp.Core.Games.Strawpoll
                 return responsePoll;
             }
 
-            return new StrawpollPoll();
+            return null;
         }
 
         public async Task<StrawpollPoll> PostPoll(StrawpollSettings settings)
@@ -78,7 +78,7 @@ namespace FunSharp.Core.Games.Strawpoll
                 return responsePoll;
             }
 
-            return new StrawpollPoll();
+            return null;
         }
     }
 }

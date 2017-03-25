@@ -13,7 +13,7 @@ namespace FunSharp.ConsoleApp
     {
         static void Main(string[] args)
         {
-            //StrawpollGetPoll();
+            StrawpollGetPoll();
             //StrawpollPostPoll();
             //Test8Ball();
 
@@ -40,15 +40,22 @@ namespace FunSharp.ConsoleApp
             StrawpollService service = StrawpollService.Instance;
             StrawpollPoll poll = await service.GetPoll(1);
 
-            Console.WriteLine($"ID: {poll.id}");
-            Console.WriteLine($"Title: {poll.title}");
-            Console.WriteLine($"Multi: {poll.multi}");
-            Console.WriteLine($"Dupcheck: {poll.dupcheck}");
-            Console.WriteLine($"Captcha: {poll.captcha}");
-
-            for (int i = 0; i < poll.options.Count; i++)
+            if (poll != null)
             {
-                Console.WriteLine($"{poll.options[i]}\t\t{poll.votes[i]}");
+                Console.WriteLine($"ID: {poll.id}");
+                Console.WriteLine($"Title: {poll.title}");
+                Console.WriteLine($"Multi: {poll.multi}");
+                Console.WriteLine($"Dupcheck: {poll.dupcheck}");
+                Console.WriteLine($"Captcha: {poll.captcha}");
+
+                for (int i = 0; i < poll.options.Count; i++)
+                {
+                    Console.WriteLine($"{poll.options[i]}\t\t{poll.votes[i]}");
+                }
+            }
+            else
+            {
+                Console.WriteLine("There was an unexpected error. Please try again later");
             }
         }
 
@@ -58,15 +65,22 @@ namespace FunSharp.ConsoleApp
             var pollSettings = StrawpollSettings.GeneratePostSettings("Will this work?", false, new List<string> { "Yes", "No", "Maybe", "Aethex is a dick" });
             StrawpollPoll poll = await service.PostPoll(pollSettings);
 
-            Console.WriteLine($"ID: {poll.id}");
-            Console.WriteLine($"Title: {poll.title}");
-            Console.WriteLine($"Multi: {poll.multi}");
-            Console.WriteLine($"Dupcheck: {poll.dupcheck}");
-            Console.WriteLine($"Captcha: {poll.captcha}");
-
-            for (int i = 0; i < poll.options.Count; i++)
+            if (poll != null)
             {
-                Console.WriteLine($"{poll.options[i]}\t\t{poll.votes[i]}");
+                Console.WriteLine($"ID: {poll.id}");
+                Console.WriteLine($"Title: {poll.title}");
+                Console.WriteLine($"Multi: {poll.multi}");
+                Console.WriteLine($"Dupcheck: {poll.dupcheck}");
+                Console.WriteLine($"Captcha: {poll.captcha}");
+
+                for (int i = 0; i < poll.options.Count; i++)
+                {
+                    Console.WriteLine($"{poll.options[i]}\t\t{poll.votes[i]}");
+                }
+            }
+            else
+            {
+                Console.WriteLine("There was an unexpected error. Please try again later");
             }
         }
     }
