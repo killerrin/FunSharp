@@ -6,14 +6,11 @@ namespace FunSharp.Core.Games.Strawpoll
 {
     public class StrawpollSettings
     {
-        public string Title { get; set; }
-        public bool Multi { get; set; }
-        List<string> Options { get; set; }
+        public string Title { get; set; } = "";
+        public bool Multi { get; set; } = false;
+        public List<string> Options { get; set; } = new List<string>();
 
-        public StrawpollSettings()
-        {
-            Options = new List<string>();
-        }
+        public StrawpollSettings() { }
 
         public static StrawpollSettings GeneratePostSettings(string title, bool multi, List<string> options)
         {
