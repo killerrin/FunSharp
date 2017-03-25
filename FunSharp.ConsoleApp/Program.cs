@@ -50,8 +50,9 @@ namespace FunSharp.ConsoleApp
 
                 for (int i = 0; i < poll.options.Count; i++)
                 {
-                    Console.WriteLine($"{poll.options[i]}\t\t{poll.votes[i]}");
+                    Console.WriteLine(string.Format("\t{0,-15}{1}", poll.votes[i] + " votes", poll.options[i]));
                 }
+
             }
             else
             {
