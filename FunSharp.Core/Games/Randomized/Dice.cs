@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 
 namespace FunSharp.Core.Games.Randomized
@@ -18,6 +19,8 @@ namespace FunSharp.Core.Games.Randomized
         public int Roll(int sidesOnDice) { return Random.Next(1, sidesOnDice + 1); }
         public int Roll(int numberOfDice, int sidesOnDice)
         {
+            if (numberOfDice == 0) numberOfDice = 1;
+
             int totalRoll = 0;
             for (int i = 0; i < numberOfDice; i++)
                 totalRoll += Roll(sidesOnDice);
@@ -26,6 +29,8 @@ namespace FunSharp.Core.Games.Randomized
 
         public List<int> RollMultiple(int numberOfDice, int sidesOnDice)
         {
+            if (numberOfDice == 0) numberOfDice = 1;
+
             List<int> rolls = new List<int>();
             for (int i = 0; i < numberOfDice; i++)
             {
@@ -36,17 +41,24 @@ namespace FunSharp.Core.Games.Randomized
         }
         public List<int> RollMultiple(string dieString)
         {
+            Debug.WriteLine($"Rolling: {dieString}");
             string[] dieSplit = dieString.Split('d');
+            Debug.WriteLine($"dieSplit | Length: {dieSplit.Length} | num: {dieSplit[0]}, sides: {dieSplit[1]}");
 
-            int numberOfDice;
-            int sidesOnDice;
-
-            if (!int.TryParse(dieSplit[0], out numberOfDice))
-                return new List<int>();
-            if (!int.TryParse(dieSplit[1], out sidesOnDice))
+            // Get the total sides on the dice
+            if (!int.TryParse(dieSplit[1], out int sidesOnDice))
                 return new List<int>();
 
-            return RollMultiple(numberOfDice, sidesOnDice);
+            // If the number of Dice isn't specified, assume 1
+            if (string.IsNullOrWhiteSpace(dieSplit[0]))
+                return RollMultiple(1, sidesOnDice);
+
+            // Alternatively, if it is specified and it parses correctly, roll multiple dice
+            if (int.TryParse(dieSplit[0], out int numberOfDice))
+                return RollMultiple(numberOfDice, sidesOnDice);
+
+            // Lastly, if nothing else happens roll nothing
+            return new List<int>();
         }
     }
 }

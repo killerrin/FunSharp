@@ -13,13 +13,32 @@ namespace FunSharp.ConsoleApp
     {
         static void Main(string[] args)
         {
-            StrawpollGetPoll();
+            //StrawpollGetPoll();
             //StrawpollPostPoll();
             //Test8Ball();
-
-
+            TestDice();
 
             Console.ReadLine();
+        }
+
+        private static void TestDice()
+        {
+            Dice die = new Dice();
+            while (true)
+            {
+                Console.Write("Enter your die string (2d20): ");
+                var dieStr = Console.ReadLine();
+                if (dieStr.ToLower() == "exit")
+                    break;
+
+                var result = die.RollMultiple(dieStr);
+                foreach (var i in result)
+                {
+                    Console.WriteLine(i);
+                }
+
+                Console.WriteLine();
+            }
         }
 
         private static void Test8Ball()
