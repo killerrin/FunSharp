@@ -13,10 +13,10 @@ namespace FunSharp.ConsoleApp
     {
         static void Main(string[] args)
         {
-            //StrawpollGetPoll();
+            StrawpollGetPoll();
             //StrawpollPostPoll();
             //Test8Ball();
-            TestDice();
+            //TestDice();
 
             Console.ReadLine();
         }

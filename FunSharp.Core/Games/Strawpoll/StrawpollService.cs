@@ -19,6 +19,8 @@ namespace FunSharp.Core.Games.Strawpoll
         private HttpClient m_client;
         public const string API_ENDPOINT = "https://strawpoll.me/api/v2/";
 
+        public HttpResponseMessage CurrentResponse { get; protected set; }
+
         private StrawpollService()
         {
             m_client = new HttpClient();
@@ -34,6 +36,8 @@ namespace FunSharp.Core.Games.Strawpoll
             var requestMessage = new HttpRequestMessage(HttpMethod.Get, endpoint);
             var response = await m_client.SendAsync(requestMessage);
             Debug.WriteLine($"{nameof(StrawpollService)}: {nameof(GetPoll)} - Message Sent");
+
+            CurrentResponse = response;
 
             if (response.IsSuccessStatusCode)
             {
@@ -64,6 +68,8 @@ namespace FunSharp.Core.Games.Strawpoll
 
             var response = await m_client.SendAsync(requestMessage);
             Debug.WriteLine($"{nameof(StrawpollService)}: {nameof(PostPoll)} - Message Sent");
+
+            CurrentResponse = response;
 
             if (response.IsSuccessStatusCode)
             {
